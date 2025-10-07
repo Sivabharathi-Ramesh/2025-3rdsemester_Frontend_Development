@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Game for Kids</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+
+        <div id="welcome-screen" class="screen active">
+            <h1>Welcome to the Learning Game!</h1>
+            <p>Please tell us who you are:</p>
+            <input type="text" id="player-name-input" placeholder="Enter your name">
+            <select id="player-grade-select">
+                <option value="">-- Select Your Grade --</option>
+                <option value="1">Grade 1 (Easy)</option>
+                <option value="2">Grade 2 (Medium)</option>
+                <option value="3">Grade 3 (Hard)</option>
+            </select>
+            <button id="start-btn">Start</button>
+        </div>
+
+        <div id="instructions-screen" class="screen">
+            <h2 id="welcome-message"></h2>
+            <h3>How to Play:</h3>
+            <p>1. First, you can go through a quick learning lesson.</p>
+            <p>2. After the lesson, the game will start.</p>
+            <p>3. Answer the questions to score points and advance levels!</p>
+            <button id="learn-btn">Let's Learn!</button>
+            <button id="skip-learn-btn">Skip and Play</button>
+        </div>
+
+        <div id="learning-screen" class="screen">
+            <h2 id="learning-title">Learning Time!</h2>
+            <div id="learning-content">
+                </div>
+            <button id="start-game-btn">I'm Ready to Play!</button>
+        </div>
+
+        <div id="game-screen" class="screen">
+            <div class="game-header">
+                <div id="scoreboard">Score: 0</div>
+                <div id="level-tracker">Level: 1</div>
+            </div>
+            <h2 id="question-title">What is...</h2>
+            <div id="question-container">
+                </div>
+            <input type="text" id="answer-input" placeholder="Your answer">
+            <button id="submit-answer-btn">Submit</button>
+            <p id="feedback-text"></p>
+        </div>
+
+        <div id="controls" class="hidden">
+             <button id="reset-btn">Reset Game</button>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
